@@ -23,23 +23,23 @@ data = {
 }
 
 # Create a DataFrame
-df = pd.DataFrame(data)
+df_revenue = pd.DataFrame(data)
 
 # Create the figure using Plotly
 fig = go.Figure()
 
 # Add Streaming Fees as the first bar in the stack
 fig.add_trace(go.Bar(
-    x=df['Month'],
-    y=df['Streaming Fees'],
+    x=df_revenue['Month'],
+    y=df_revenue['Streaming Fees'],
     name='Streaming Fees (Index Coop)',
     marker_color='orange'
 ))
 
 # Add Methodologist Portion as the second bar in the stack
 fig.add_trace(go.Bar(
-    x=df['Month'],
-    y=df['Methodologist Portion'],
+    x=df_revenue['Month'],
+    y=df_revenue['Methodologist Portion'],
     name='Streaming Fees (Methodologist Portion)',
     marker_color='blue'
 ))
@@ -98,3 +98,31 @@ fig.update_layout(
 
 # Display the Plotly chart in Streamlit
 st.plotly_chart(fig)
+
+# Add the section for "What about funny thing?"
+st.subheader("What about funny thing?")
+
+st.write("""
+To assess the potential of the funny thing project, we can calculate the projected monthly income based on the average monthly streaming fees from Index Coop.
+You can input a success percentage compared to the Index Coop (ranging from 0% to 200%).
+""")
+
+# Compute the average monthly income from the Streaming Fees
+average_monthly_income = (
+    df_revenue['Streaming Fees'] + df_revenue['Methodologist Portion']
+).mean()
+
+# Allow the user to input a success percentage (between 0 and 200%)
+success_percentage = st.slider("Select the success percentage of funny thing compared to Index Coop", 0, 200, 100)
+
+# Calculate the projected monthly income based on the success percentage
+projected_income = (success_percentage / 100) * average_monthly_income
+
+average_market_cap = df['market_cap'].mean()
+
+# Calculate the projected market cap based on the success percentage
+projected_market_cap = (success_percentage / 100) * average_market_cap
+
+# Display the projected income
+st.write(f"With a success rate of {success_percentage}%, the projected monthly income for the funny thing project is: **${projected_income:,.2f}**.")
+st.write(f"The projected market cap for the funny thing project is: **${projected_market_cap:,.2f}**.")
