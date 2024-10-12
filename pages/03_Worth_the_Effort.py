@@ -59,7 +59,7 @@ fig.update_layout(
 
 st.plotly_chart(fig)    
 
-st.subheader("How Much Worth a Decentralized Index Protocol?")
+st.subheader("How Much is a Decentralized Index Protocol Worth?")
 
 st.write("""
 The market capitalization of the Index Cooperative helps to assess the overall value of a decentralized index protocol.
