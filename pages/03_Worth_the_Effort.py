@@ -10,6 +10,11 @@ st.title("Worth the Effort?")
 
 st.subheader("Streaming Fees")
 
+st.write("""
+The Index Cooperative generates revenue through streaming fees, which are paid by users who mint and redeem index tokens.
+These fees are distributed between the Index Coop and the methodologist who created the index.
+""")
+
 data = {
     'Month': ['Oct 2020', 'Nov 2020', 'Dec 2020', 'Jan 2021', 'Feb 2021', 'Mar 2021', 
               'Apr 2021', 'May 2021', 'Jun 2021', 'Jul 2021', 'Aug 2021', 'Sep 2021'],
@@ -54,5 +59,42 @@ fig.update_layout(
 
 st.plotly_chart(fig)    
 
-st.subheader("Token Value")
+st.subheader("How Much Worth a Decentralized Index Protocol?")
 
+st.write("""
+The market capitalization of the Index Cooperative helps to assess the overall value of a decentralized index protocol.
+The market cap is calculated by multiplying the total supply of index tokens by the current price of each token.
+""")
+
+# Load the CSV data
+csv_file = 'indexcoop.csv'  # Adjust this path to match the actual path of your CSV file
+df = pd.read_csv(csv_file)
+
+# Ensure the 'date' column is in datetime format
+df['date'] = pd.to_datetime(df['date'])
+
+# Create a Plotly line chart for market cap
+fig = go.Figure()
+
+# Add Market Cap line
+fig.add_trace(go.Line(
+    x=df['date'],
+    y=df['market_cap'],
+    mode='lines',
+    name='Market Cap',
+    marker_color='blue'
+))
+
+# Update layout
+fig.update_layout(
+    title="Market Cap of Index Cooperative",
+    xaxis_title="Date",
+    yaxis_title="Market Cap ($)",
+    xaxis_tickformat='%Y-%m-%d',
+    template="plotly_white",
+    width=800,
+    height=500
+)
+
+# Display the Plotly chart in Streamlit
+st.plotly_chart(fig)
