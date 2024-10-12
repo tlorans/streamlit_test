@@ -67,6 +67,18 @@ fig.update_layout(
 # Display the Plotly chart
 st.plotly_chart(fig)
 
+st.subheader("Factor Replication Strategy")
+
+
+st.subheader("Value Proposition: A Decentralized Factor Index")
+
+st.write("""
+A decentralized factor index is a tokenized representation of a factor investing strategy.
+Investors can buy and sell index tokens that track the performance of a specific factor.
+         See the next page for more details about decentralized factor index protocol!
+""")
+
+
 # Add references section with clickable links
 st.subheader("References")
 st.markdown("""

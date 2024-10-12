@@ -7,7 +7,7 @@ st.title("Decentralized Index Protocol")
 
 
 st.write("""
-The Decentralized Index Protocol is a platform that allows investors to create and manage their own index funds.
+A Decentralized Index Protocol is a platform that allows investors to create and manage their own index funds.
 Investors can issue their own index tokens, which represent a basket of underlying assets, and trade them on decentralized exchanges.
 """)
 
