@@ -1,7 +1,13 @@
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
+from auth import check_password  # Import the password check
 
+
+# Apply the password check
+if not check_password():
+    st.stop()  # Stop rendering the page if password is incorrect
+    
 
 
 st.set_page_config(page_title="Worth the Effort")
