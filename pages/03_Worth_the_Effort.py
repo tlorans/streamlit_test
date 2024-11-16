@@ -11,8 +11,10 @@ st.title("Worth the Effort?")
 st.subheader("Streaming Fees")
 
 st.write("""
-The Index Cooperative generates revenue through streaming fees, which are paid by users who mint and redeem index tokens.
-These fees are distributed between the Index Coop and the methodologist who created the index.
+The Decentralized Index generates revenue through streaming fees, which are paid by users who mint and redeem index tokens.
+Below is a chart showing the streaming fees collected by the Index Coop (main actor in the sector as of today) and the portion allocated to the methodologist who created the index.
+The data is based on the monthly streaming fees collected by the Index Coop and the methodologist portion from October 2020 to September 2021.
+While outdated, this data provides insights into the revenue potential of a decentralized index protocol.
 """)
 
 data = {
@@ -62,7 +64,7 @@ st.plotly_chart(fig)
 st.subheader("How Much is a Decentralized Index Protocol Worth?")
 
 st.write("""
-The market capitalization of the Index Cooperative helps to assess the overall value of a decentralized index protocol.
+The market capitalization of the main current actor, the Index Coop, helps to assess the overall value of a decentralized index protocol.
 The market cap is calculated by multiplying the total supply of index tokens by the current price of each token.
 """)
 
