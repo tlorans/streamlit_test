@@ -100,7 +100,7 @@ fig.update_layout(
 st.plotly_chart(fig)
 
 # Add the section for "What about funny thing?"
-st.subheader("What about is?")
+st.subheader("What about us?")
 
 st.write("""
 To assess the potential of the project, we can calculate the projected monthly income based on the average monthly streaming fees from Index Coop.
