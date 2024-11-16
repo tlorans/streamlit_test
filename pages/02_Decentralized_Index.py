@@ -1,17 +1,9 @@
 import streamlit as st
 import graphviz as gv
-from auth import check_password  # Import the password check
-
-
-# Apply the password check
-if not check_password():
-    st.stop()  # Stop rendering the page if password is incorrect
-    
 
 st.set_page_config(page_title="Decentralized Index Protocol")
 
 st.title("Decentralized Index Protocol")
-
 
 st.write("""
 A Decentralized Index Protocol is a platform that allows investors to create and manage their own index funds.

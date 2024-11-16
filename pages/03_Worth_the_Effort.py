@@ -1,13 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
-from auth import check_password  # Import the password check
 
-
-# Apply the password check
-if not check_password():
-    st.stop()  # Stop rendering the page if password is incorrect
-    
 
 
 st.set_page_config(page_title="Worth the Effort")
@@ -106,10 +100,10 @@ fig.update_layout(
 st.plotly_chart(fig)
 
 # Add the section for "What about funny thing?"
-st.subheader("What about funny thing?")
+st.subheader("What about is?")
 
 st.write("""
-To assess the potential of the funny thing project, we can calculate the projected monthly income based on the average monthly streaming fees from Index Coop.
+To assess the potential of the project, we can calculate the projected monthly income based on the average monthly streaming fees from Index Coop.
 You can input a success percentage compared to the Index Coop (ranging from 0% to 200%).
 """)
 
